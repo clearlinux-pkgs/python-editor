@@ -4,7 +4,7 @@
 #
 Name     : python-editor
 Version  : 0.4
-Release  : 4
+Release  : 5
 URL      : https://pypi.python.org/packages/source/p/python-editor/python-editor-0.4.tar.gz
 Source0  : https://pypi.python.org/packages/source/p/python-editor/python-editor-0.4.tar.gz
 Summary  : Programmatically open an editor, capture the result.
