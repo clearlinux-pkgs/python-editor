@@ -4,7 +4,7 @@
 #
 Name     : python-editor
 Version  : 1.0.1
-Release  : 11
+Release  : 12
 URL      : http://pypi.debian.net/python-editor/python-editor-1.0.1.tar.gz
 Source0  : http://pypi.debian.net/python-editor/python-editor-1.0.1.tar.gz
 Summary  : Programmatically open an editor, capture the result.
