@@ -4,16 +4,18 @@
 #
 Name     : python-editor
 Version  : 1.0.3
-Release  : 19
-URL      : http://pypi.debian.net/python-editor/python-editor-1.0.3.tar.gz
-Source0  : http://pypi.debian.net/python-editor/python-editor-1.0.3.tar.gz
+Release  : 20
+URL      : https://files.pythonhosted.org/packages/65/1e/adf6e000ea5dc909aa420352d6ba37f16434c8a3c2fa030445411a1ed545/python-editor-1.0.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/65/1e/adf6e000ea5dc909aa420352d6ba37f16434c8a3c2fa030445411a1ed545/python-editor-1.0.3.tar.gz
 Summary  : Programmatically open an editor, capture the result.
 Group    : Development/Tools
 License  : Apache-2.0
+Requires: python-editor-python3
+Requires: python-editor-license
 Requires: python-editor-python
+BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
@@ -21,12 +23,30 @@ BuildRequires : setuptools
 `python-editor` is a library that provides the `editor` module for programmatically
 interfacing with your system's $EDITOR.
 
+%package license
+Summary: license components for the python-editor package.
+Group: Default
+
+%description license
+license components for the python-editor package.
+
+
 %package python
 Summary: python components for the python-editor package.
 Group: Default
+Requires: python-editor-python3
 
 %description python
 python components for the python-editor package.
+
+
+%package python3
+Summary: python3 components for the python-editor package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the python-editor package.
 
 
 %prep
@@ -37,15 +57,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503075633
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1532382781
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1503075633
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+mkdir -p %{buildroot}/usr/share/doc/python-editor
+cp LICENSE %{buildroot}/usr/share/doc/python-editor/LICENSE
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -53,7 +72,13 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/python-editor/LICENSE
+
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python2*/*
+
+%files python3
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
