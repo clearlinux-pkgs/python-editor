@@ -4,7 +4,7 @@
 #
 Name     : python-editor
 Version  : 1.0.3
-Release  : 20
+Release  : 21
 URL      : https://files.pythonhosted.org/packages/65/1e/adf6e000ea5dc909aa420352d6ba37f16434c8a3c2fa030445411a1ed545/python-editor-1.0.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/65/1e/adf6e000ea5dc909aa420352d6ba37f16434c8a3c2fa030445411a1ed545/python-editor-1.0.3.tar.gz
 Summary  : Programmatically open an editor, capture the result.
