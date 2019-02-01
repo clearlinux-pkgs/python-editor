@@ -1,5 +1,5 @@
 PKG_NAME := python-editor
-URL = https://files.pythonhosted.org/packages/65/1e/adf6e000ea5dc909aa420352d6ba37f16434c8a3c2fa030445411a1ed545/python-editor-1.0.3.tar.gz
+URL = https://files.pythonhosted.org/packages/0a/85/78f4a216d28343a67b7397c99825cff336330893f00601443f7c7b2f2234/python-editor-1.0.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
